@@ -27,7 +27,13 @@
         </div>
     </div>
     <div class="navbar-center">
-        <a class="btn btn-ghost text-xl">Mesa 7</a>
+        <a href="/homepage" class="btn btn-ghost gap-2 font-display text-xl font-semibold tracking-wide text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M8.25 3v6.75M4.5 3v6.75a3 3 0 003 3v0a3 3 0 003-3V3M8.25 12.75V21m7.5-18v18m0-10.5h3a1.5 1.5 0 001.5-1.5V6a3 3 0 00-4.5-2.6" />
+            </svg>
+            Mesa 7
+        </a>
     </div>
     <div class="navbar-end">
         

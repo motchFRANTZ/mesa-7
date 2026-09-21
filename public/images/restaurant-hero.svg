@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#bg)"/>
+
+  <circle cx="200" cy="150" r="95" fill="#fff7ed"/>
+  <circle cx="200" cy="150" r="72" fill="none" stroke="#fdba74" stroke-width="3"/>
+
+  <g fill="#c2410c">
+    <ellipse cx="175" cy="150" rx="20" ry="12" transform="rotate(-15 175 150)"/>
+    <ellipse cx="215" cy="140" rx="16" ry="10" transform="rotate(10 215 140)"/>
+    <ellipse cx="195" cy="168" rx="14" ry="9" transform="rotate(25 195 168)"/>
+    <circle cx="230" cy="165" r="7"/>
+    <circle cx="165" cy="130" r="6"/>
+  </g>
+
+  <g stroke="#44403c" stroke-width="5" stroke-linecap="round">
+    <line x1="95" y1="90" x2="95" y2="215"/>
+    <line x1="83" y1="90" x2="83" y2="115"/>
+    <line x1="95" y1="90" x2="95" y2="115"/>
+    <line x1="107" y1="90" x2="107" y2="115"/>
+    <path d="M83 115 Q95 130 107 115" fill="none"/>
+  </g>
+
+  <g stroke="#44403c" stroke-width="5" stroke-linecap="round">
+    <line x1="305" y1="90" x2="305" y2="215"/>
+    <path d="M295 90 Q295 105 305 112 Q315 105 315 90" fill="none"/>
+  </g>
+</svg>
