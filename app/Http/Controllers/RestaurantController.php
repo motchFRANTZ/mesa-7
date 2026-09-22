@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
-use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate as FacadesGate;
@@ -34,6 +33,7 @@ class RestaurantController extends Controller
     public function edit(Restaurant $restaurant)
     {
         FacadesGate::authorize('update', $restaurant);
+
         return view('restaurant.show', [
             'restaurant' => $restaurant,
         ]);
@@ -59,6 +59,16 @@ class RestaurantController extends Controller
     public function destroy(Restaurant $restaurant)
     {
         $restaurant->delete();
+
         return redirect('/homepage');
+    }
+
+    public function panel(Restaurant $restaurant)
+    {
+        FacadesGate::authorize('view', $restaurant);
+
+        return view('restaurant.panel', [
+            'restaurant' => $restaurant,
+        ]);
     }
 }

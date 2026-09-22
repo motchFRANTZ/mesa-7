@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex flex-wrap gap-4 mb-10">
-        <div class="card bg-base-300 h-64 w-full sm:w-96 shadow-sm">
+        <div class="card bg-base-300 border border-primary/40 h-64 w-full sm:w-96 shadow-sm">
             <figure>
                 <img src="https://plus.unsplash.com/premium_photo-1661883237884-263e8de8869b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudGVzfGVufDB8fDB8fHww"
                     alt="Criar restaurante" class="h-32 w-full object-cover" />

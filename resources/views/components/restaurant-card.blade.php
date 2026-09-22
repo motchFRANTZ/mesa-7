@@ -13,13 +13,10 @@
             {{ $restaurant->restaurant_name }}
         </h2>
         <p class="line-clamp-2 text-base-content/80">{{ $restaurant->description }}</p>
-        <div class="card-actions">
-            <a href="/restaurant/{{ $restaurant->slug }}" class="btn btn-primary btn-sm">
+        <div class="card-actions justify-end">
+            <a href="/restaurant/{{ $restaurant->slug }}/panel" class="btn btn-primary btn-sm">
                 <x-heroicon-o-cog-6-tooth class="w-5 h-5"/>
-            </a>
-
-            <a href="" class="btn btn-primary btn-sm">
-                Ver Cardápio
+                Painel de Uso
             </a>
         </div>
     </div>
