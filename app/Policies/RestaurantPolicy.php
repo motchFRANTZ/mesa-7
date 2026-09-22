@@ -9,6 +9,10 @@ use Illuminate\Auth\Access\Response;
 class RestaurantPolicy
 {
 
+    public function view(User $user, Restaurant $restaurant): Response
+    {
+        return $user->id === $restaurant->user_id ? Response::allow() : Response::denyAsNotFound('You do not have permission to view this restaurant.');
+    }
     /**
      * Determine whether the user can update the model.
      */

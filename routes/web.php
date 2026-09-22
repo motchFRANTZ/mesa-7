@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,7 +12,7 @@ Route::middleware("guest")->group(function () {
     Route::get('/register', [RegisterController::class, 'create']);
     Route::post('/register', [RegisterController::class, 'store']);
 
-    Route::get('/login', [SessionController::class, 'create']);
+    Route::get('/login', [SessionController::class, 'create'])->name('login');
     Route::post('/login', [SessionController::class, 'store']);
 });
 
@@ -30,4 +31,11 @@ Route::middleware("auth")->group(function () {
     Route::get('/restaurant/{restaurant}', [RestaurantController::class, 'edit'])->where('restaurant', '[a-z0-9-]+');
     Route::patch('/restaurant/{restaurant}', [RestaurantController::class, 'update'])->where('restaurant', '[a-z0-9-]+');
     Route::delete('/restaurant/{restaurant}', [RestaurantController::class, 'destroy'])->where('restaurant', '[a-z0-9-]+');
+
+    Route::middleware('restaurant')
+        ->prefix('/restaurant/{restaurant}')
+        ->where(['restaurant' => '[a-z0-9-]+'])
+        ->group(function () {
+            Route::resource('categories', CategoryController::class);
+        });
 });
