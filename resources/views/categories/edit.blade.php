@@ -15,12 +15,6 @@
         <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-6 mx-auto shadow-sm">
             <legend class="fieldset-legend font-display text-lg text-primary px-2">Dados da categoria</legend>
 
-            <div class="flex justify-end">
-                <button onclick="modal_delete.showModal()" type="button" class="btn btn-error btn-outline btn-sm">
-                    <x-heroicon-s-trash class="w-4 h-4"/>
-                </button>
-            </div>
-
             <label class="label" for="name">Nome da categoria</label>
             <input type="text" id="name" name="name" class="input"
                    placeholder="Entradas, Pratos Principais, Bebidas..." value="{{ $category->name }}"/>
@@ -35,19 +29,4 @@
             </button>
         </fieldset>
     </form>
-
-    <dialog id="modal_delete" class="modal">
-        <div class="modal-box">
-            <h3 class="text-lg font-bold">Tem certeza?</h3>
-            <p class="py-4">Você está prestes a excluir a categoria <b>{{ $category->name }}</b>.</p>
-            <form method="POST" action="/restaurant/{{ $restaurant->slug }}/categories/{{ $category->id }}">
-                @csrf
-                @method('DELETE')
-                <div class="modal-action">
-                    <button type="button" class="btn">Cancelar</button>
-                    <button type="submit" class="btn btn-error">Excluir</button>
-                </div>
-            </form>
-        </div>
-    </dialog>
 </x-layout>

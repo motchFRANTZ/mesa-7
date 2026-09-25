@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex flex-wrap gap-4">
-        <div class="card w-96 bg-base-300 card-sm border border-primary/40 shadow-sm">
+        <div class="card w-85 bg-base-300 card-sm border border-primary/40 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title">
                     <x-heroicon-o-book-open class="w-5 h-5 text-primary"/>
@@ -22,17 +22,34 @@
             </div>
         </div>
 
-        <div class="card w-96 bg-base-300 card-sm border border-primary/40 shadow-sm">
+        <div class="card w-85 bg-base-300 card-sm border border-primary/40 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title">
                     <x-heroicon-o-tag class="w-5 h-5 text-primary"/>
                     Categorias
                 </h2>
                 <p>Organize os produtos do seu cardápio em categorias para facilitar a navegação e o gerenciamento</p>
-                <div class="justify-end card-actions">
+                <div class="flex card-actions">
                     <a href="{{ route('categories.create', $restaurant) }}" class="btn btn-sm btn-primary">
                         <x-heroicon-o-plus class="w-5 h-5"/>
-                        Adicionar Categoria
+                    </a>
+                    <a href="{{ route('categories.index', $restaurant) }}" class="btn btn-sm btn-primary">
+                        <x-heroicon-o-eye class="w-5 h-5"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card w-85 bg-base-300 card-sm border border-primary/40 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <x-heroicon-o-cog-6-tooth class="w-5 h-5 text-primary"/>
+                    Configurações
+                </h2>
+                <p>Configurações gerais (Nome, contato, descrição, slug...) do seu restaurante</p>
+                <div class="justify-end card-actions">
+                    <a href="{{ route('restaurant.edit', $restaurant) }}" class="btn btn-sm btn-primary">
+                        <x-heroicon-o-cog-6-tooth class="w-5 h-5"/>
+                        Configurações
                     </a>
                 </div>
             </div>

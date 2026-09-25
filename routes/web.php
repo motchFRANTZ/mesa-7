@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     // Restaurants
     Route::get('/restaurant', [RestaurantController::class, 'create']);
     Route::post('/restaurant', [RestaurantController::class, 'store']);
-    Route::get('/restaurant/{restaurant}', [RestaurantController::class, 'edit'])->where('restaurant', '[a-z0-9-]+');
+    Route::get('/restaurant/{restaurant}', [RestaurantController::class, 'edit'])->where('restaurant', '[a-z0-9-]+')->name('restaurant.edit');
     Route::patch('/restaurant/{restaurant}', [RestaurantController::class, 'update'])->where('restaurant', '[a-z0-9-]+');
     Route::delete('/restaurant/{restaurant}', [RestaurantController::class, 'destroy'])->where('restaurant', '[a-z0-9-]+');
     Route::get('/restaurant/{restaurant}/panel', [RestaurantController::class, 'panel'])->where('restaurant', '[a-z0-9-]+')->name('panel');

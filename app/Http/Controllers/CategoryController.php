@@ -12,9 +12,12 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Restaurant $restaurant)
     {
-        return Category::all();
+        return view('categories.index', [
+            'restaurant' => $restaurant,
+            'categories' => Category::orderBy('sort_order')->get(),
+        ]);
     }
 
     /**
@@ -34,7 +37,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255', Rule::unique('categories')->where('restaurant_id', app(Restaurant::class)->id)],
-            'sort_order' => 'nullable|integer'
+            'sort_order' => 'nullable|integer',
         ]);
 
         Category::create($validated);
@@ -59,6 +62,7 @@ class CategoryController extends Controller
             'restaurant' => $restaurant,
             'category' => $category,
         ]);
+
     }
 
     /**
@@ -68,11 +72,12 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255', Rule::unique('categories')->where('restaurant_id', app(Restaurant::class)->id)->ignore($category->id)],
-            'sort_order' => 'nullable|integer'
+            'sort_order' => 'nullable|integer',
         ]);
 
         $category->update($validated);
-        return back();
+
+        return redirect()->route('categories.index', $restaurant);
     }
 
     /**
@@ -81,6 +86,7 @@ class CategoryController extends Controller
     public function destroy(Restaurant $restaurant, Category $category)
     {
         $category->delete();
-        return redirect('homepage');
+
+        return redirect()->route('categories.index', $restaurant);
     }
 }

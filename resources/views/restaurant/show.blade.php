@@ -8,7 +8,7 @@
         @csrf
         @method('PATCH')
 
-        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-md border p-6 mx-auto shadow-sm">
+        <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-md border p-6 mx-auto shadow-sm mb-6">
             <legend class="fieldset-legend font-display text-lg text-primary px-2">Dados do restaurante</legend>
 
             <div class="flex items-center gap-4 mb-4">
@@ -60,7 +60,7 @@
                 @csrf
                 @method('DELETE')
                 <div class="modal-action">
-                    <button type="button" class="btn">Cancelar</button>
+                    <button type="button" class="btn" onclick="modal_delete.close()">Cancelar</button>
                     <button type="submit" class="btn btn-error">Excluir</button>
                 </div>
             </form>
